@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NotifocationsApplication</string>
+    <string name="add_a_new_notification">Add a new notification</string>
+    <string name="custom_action">Custom Action</string>
+</resources>
