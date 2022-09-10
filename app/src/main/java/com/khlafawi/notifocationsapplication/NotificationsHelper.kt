@@ -72,13 +72,13 @@ object NotificationsHelper {
         //TODO: STEP[3] Create a new notification
         val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
         val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
+
             setSmallIcon(R.drawable.ic_launcher_foreground)
             setContentTitle(title)
             setContentText(message)
             setAutoCancel(autoCancel)
             setStyle(NotificationCompat.BigTextStyle().bigText(bigText))
             priority = NotificationCompat.PRIORITY_DEFAULT
-            setAutoCancel(autoCancel)
 
             val pendingIntent: PendingIntent?
             val intent = Intent(context, MainActivity::class.java)
@@ -109,7 +109,7 @@ object NotificationsHelper {
         val detailActivityPendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             PendingIntent.getActivity(context, 0, detailsActivity, FLAG_MUTABLE)
         } else {
-            PendingIntent.getBroadcast(
+            PendingIntent.getActivity(
                 context,
                 0,
                 detailsActivity,
